@@ -4,25 +4,23 @@ require "./lib/joke.rb"
 
 class JokeTest < Mdinitest::Test
 
+  def setup
+    @joke = Joke.new(1, "Why did the strawberry cross the road?", "Because his mother was in a jam.")
+  end
 
+  def test_it_exists
+    assert_instance_of Joke, @joke
+  end
 
+  def test_joke_id_matches_what_was_passed
+    assert_equal 1, @joke.id
+  end
+
+  def test_joke_setup_matches_argument
+    assert_equal "Why did the strawberry cross the road?", @joke.setup
+  end
+
+  def test_joke_punchline_matches_argument
+    assert_equal "Because his mother was in a jam.", @joke.punchline
+  end
 end
-
-
-
-
-# ruby
-# pry(main)> require './lib/joke'
-# # => true
-#
-# pry(main)> joke = Joke.new(1, "Why did the strawberry cross the road?", "Because his mother was in a jam.")
-# # => #<Joke:0x00007f84602e4190...>
-#
-# pry(main)> joke.id
-# # => 1
-#
-# pry(main)> joke.setup
-# # => "Why did the strawberry cross the road?"
-#
-# pry(main)> joke.punchline
-# # => "Because his mother was in a jam."
