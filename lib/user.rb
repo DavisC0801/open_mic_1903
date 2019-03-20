@@ -12,5 +12,5 @@ class User
   def learn(joke)
     @jokes << joke
   end
-
+  
 end
