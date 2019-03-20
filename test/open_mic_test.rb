@@ -41,6 +41,8 @@ class OpenMicTest < Minitest::Test
   end
 
   def test_if_jokes_are_repeated
+    @open_mic.welcome(@sal)
+    @open_mic.welcome(@ali)
     @ali.learn(@joke1)
     @ali.learn(@joke2)
     refute @open_mic.repeated_jokes?

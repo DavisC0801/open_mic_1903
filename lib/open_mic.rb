@@ -15,4 +15,8 @@ def welcome(patron)
   @performers << patron
 end
 
+def repeated_jokes?
+  @performers.any? {|perfomer| perfomer.repeated}
+end
+
 end
