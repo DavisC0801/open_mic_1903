@@ -15,11 +15,15 @@ class User
   end
 
   def tell(user, joke)
+    #repeated defaults to false and will change to true if they tell
+    #a joke they have previously learned.
     @repeated = @jokes.include?(joke)
     user.learn(joke)
   end
 
   def joke_by_id(idnum)
+    #this iterates through the jokes array and returns a joke object if
+    #it can find a matching ID number.
     @jokes.find{|joke| joke.id == idnum}
   end
 end
