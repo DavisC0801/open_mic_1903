@@ -11,4 +11,8 @@ def initialize(venue)
   @performers = []
 end
 
+def welcome(patron)
+  @performers << patron
+end
+
 end
